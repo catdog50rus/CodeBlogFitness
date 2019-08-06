@@ -3,12 +3,12 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.29123.88
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ClassLibrary1", "ClassLibrary1\ClassLibrary1.csproj", "{D525CC1A-5360-4C33-A32A-B4C7EB0C301F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CodeBlogFitness.CMD", "ConsoleApp1\CodeBlogFitness.CMD.csproj", "{38AEAAA0-D715-405D-B5D6-047E94221EAC}"
 	ProjectSection(ProjectDependencies) = postProject
-		{38AEAAA0-D715-405D-B5D6-047E94221EAC} = {38AEAAA0-D715-405D-B5D6-047E94221EAC}
+		{C9B19D23-4CBC-446F-9D26-D516CDC68068} = {C9B19D23-4CBC-446F-9D26-D516CDC68068}
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleApp1", "ConsoleApp1\ConsoleApp1.csproj", "{38AEAAA0-D715-405D-B5D6-047E94221EAC}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CodeBlogFitness.BL", "CodeBlogFitness.BL\CodeBlogFitness.BL.csproj", "{C9B19D23-4CBC-446F-9D26-D516CDC68068}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -16,14 +16,14 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{D525CC1A-5360-4C33-A32A-B4C7EB0C301F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{D525CC1A-5360-4C33-A32A-B4C7EB0C301F}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{D525CC1A-5360-4C33-A32A-B4C7EB0C301F}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{D525CC1A-5360-4C33-A32A-B4C7EB0C301F}.Release|Any CPU.Build.0 = Release|Any CPU
 		{38AEAAA0-D715-405D-B5D6-047E94221EAC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{38AEAAA0-D715-405D-B5D6-047E94221EAC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{38AEAAA0-D715-405D-B5D6-047E94221EAC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{38AEAAA0-D715-405D-B5D6-047E94221EAC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C9B19D23-4CBC-446F-9D26-D516CDC68068}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C9B19D23-4CBC-446F-9D26-D516CDC68068}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C9B19D23-4CBC-446F-9D26-D516CDC68068}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C9B19D23-4CBC-446F-9D26-D516CDC68068}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
