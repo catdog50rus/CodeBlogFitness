@@ -56,6 +56,5 @@ namespace CodeBlogFitness.BL.Controller
         /// Загрузить данные пользователя
         /// </summary>
         /// <returns>Пользователь приложения</returns>
-
     }
 }

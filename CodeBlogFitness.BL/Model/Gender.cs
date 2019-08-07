@@ -11,9 +11,8 @@ namespace CodeBlogFitness.BL.Model
     public class Gender
     {
         /// <summary>
-        /// Название
+        /// Название пола
         /// </summary>
-
         public string Name { get; }
 
         /// <summary>
@@ -33,6 +32,5 @@ namespace CodeBlogFitness.BL.Model
         {
             return Name;
         }
-
     }
 }

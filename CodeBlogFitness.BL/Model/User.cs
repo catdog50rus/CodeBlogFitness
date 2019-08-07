@@ -2,7 +2,6 @@
 
 namespace CodeBlogFitness.BL.Model
 {
-
     [Serializable]
     public class User
     {
@@ -72,16 +71,11 @@ namespace CodeBlogFitness.BL.Model
             #endregion
            
             Name = name;
-
             Gender = gender;
-
             BirthDate = birthDate;
-
             Weight = weight;
-
             Height = height;
         }
-
         public override string ToString()
         {
             return Name;
