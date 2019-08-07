@@ -30,6 +30,9 @@ namespace CodeBlogFitness.BL.Model
         /// Вес.
         /// </summary>
         public double Height { get; set; }
+
+        public int Age { get { return DateTime.Now.Year - BirthDate.Year; } }
+
         #endregion
 
         /// <summary>
@@ -46,7 +49,6 @@ namespace CodeBlogFitness.BL.Model
                double weight, 
                double height)
         {
-
         #region Проверка условий
             if (string.IsNullOrWhiteSpace(name))
             {
@@ -76,9 +78,21 @@ namespace CodeBlogFitness.BL.Model
             Weight = weight;
             Height = height;
         }
+
+        public User(string name)
+        {
+            if (string.IsNullOrWhiteSpace(name))
+            {
+                throw new ArgumentNullException("Имя пользователя не может быть пустым или равно null", nameof(name));
+            }
+            Name = name;
+
+        }
+
+
         public override string ToString()
         {
-            return Name;
+            return $"{Name}";
         }
     }
 }
