@@ -1,19 +1,61 @@
 ﻿using CodeBlogFitness.BL.Model;
 using System;
+using System.IO;
+using System.Runtime.Serialization.Formatters.Binary;
 
 namespace CodeBlogFitness.BL.Controller
 {
-    class UserController
+    /// <summary>
+    /// Контроллер пользователя
+    /// </summary>
+    public class UserController
     {
+        /// <summary>
+        /// Пользователь приложения
+        /// </summary>
         public User User { get; }
 
-        public UserController(User user)
+        /// <summary>
+        /// Создание нового контроллера
+        /// </summary>
+        /// <param name="user"></param>
+        public UserController(string userName, string genderName, DateTime birthDate, double weight, double height)
         {
-            User = user ?? throw new ArgumentNullException("Пользователь не может быть пустым или null", nameof(user));
+            var gender = new Gender(genderName);
+            User = new User(userName, gender, birthDate, weight, height);
+            
         }
-        public bool Save(User user)
+
+        public UserController()
         {
-            return true;
+            var formatter = new BinaryFormatter();
+            using (var fs = new FileStream("users.dat", FileMode.OpenOrCreate))
+            {
+                if (formatter.Deserialize(fs) is User user)
+                {
+                    User = user;
+                }
+                // TODO: Что делать, если пользователя не прочитали?
+            }
         }
+
+        /// <summary>
+        /// Сохранить данный пользователя
+        /// </summary>
+        /// <param name="user"></param>
+        public void Save()
+        {
+            var formatter = new BinaryFormatter();
+            using(var fs = new FileStream("users.dat", FileMode.OpenOrCreate))
+            {
+                formatter.Serialize(fs, User);
+            }            
+        }
+
+        /// <summary>
+        /// Загрузить данные пользователя
+        /// </summary>
+        /// <returns>Пользователь приложения</returns>
+
     }
 }

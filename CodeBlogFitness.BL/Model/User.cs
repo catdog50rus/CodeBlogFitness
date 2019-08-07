@@ -2,7 +2,9 @@
 
 namespace CodeBlogFitness.BL.Model
 {
-    class User
+
+    [Serializable]
+    public class User
     {
         #region Свойства
         /// <summary>
@@ -42,8 +44,8 @@ namespace CodeBlogFitness.BL.Model
         public User(string name, 
                Gender gender, 
                DateTime birthDate, 
-               double weigth, 
-               double heigth)
+               double weight, 
+               double height)
         {
 
         #region Проверка условий
@@ -51,7 +53,7 @@ namespace CodeBlogFitness.BL.Model
             {
                 throw new ArgumentNullException("Имя пользователя не может быть пустым или равно null", nameof(name));
             }
-            if(Gender == null)
+            if(gender == null)
             {
                 throw new ArgumentNullException("Пол не может быть null.", nameof(gender));
             }
@@ -59,13 +61,13 @@ namespace CodeBlogFitness.BL.Model
             {
                 throw new ArgumentException("Невозможная дата рождения.", nameof(birthDate));
             }
-            if(weigth <= 0)
+            if(weight <= 0)
             {
-                throw new ArgumentException("Вес не может быть меньше или равен нулю", nameof(weigth));
+                throw new ArgumentException("Вес не может быть меньше или равен нулю", nameof(weight));
             }
-            if(heigth <= 0)
+            if(height <= 0)
             {
-                throw new ArgumentException("Рост не может быть меньше или равен нулю.", nameof(heigth));
+                throw new ArgumentException("Рост не может быть меньше или равен нулю.", nameof(height));
             }
             #endregion
            
@@ -75,9 +77,9 @@ namespace CodeBlogFitness.BL.Model
 
             BirthDate = birthDate;
 
-            Weight = weigth;
+            Weight = weight;
 
-            Height = heigth;
+            Height = height;
         }
 
         public override string ToString()
