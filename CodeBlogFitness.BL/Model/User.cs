@@ -14,12 +14,12 @@ namespace CodeBlogFitness.BL.Model
         /// <summary>
         /// Пол.
         /// </summary>
-        public Gender Gender { get; set; }
+        public Gender Gender { get; }
 
         /// <summary>
         /// Дата рождения.
         /// </summary>
-        public DateTime BirthDate { get; set; }
+        public DateTime BirthDate { get; }
 
         /// <summary>
         /// Рост.
@@ -31,7 +31,6 @@ namespace CodeBlogFitness.BL.Model
         /// </summary>
         public double Height { get; set; }
 
-        
         public int Age { get { return DateTime.Now.Year - BirthDate.Year; } }
 
         #endregion
@@ -93,7 +92,7 @@ namespace CodeBlogFitness.BL.Model
 
         public override string ToString()
         {
-            return $"{Name}: \nПолных лет: {Age}, Пол: {Gender}, Дата рождения: {BirthDate.ToString("d")}, Вес: {Weight}кг, Рост: {Height}см";
+            return $"{Name}";
         }
     }
 }
