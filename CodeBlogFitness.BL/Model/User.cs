@@ -55,7 +55,7 @@ namespace CodeBlogFitness.BL.Model
             {
                 throw new ArgumentNullException("Имя пользователя не может быть пустым или равно null", nameof(name));
             }
-            if(gender == null)
+            if (gender == null)
             {
                 throw new ArgumentNullException("Пол не может быть null.", nameof(gender));
             }
