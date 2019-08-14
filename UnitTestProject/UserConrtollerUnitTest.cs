@@ -6,7 +6,7 @@ using CodeBlogFitness.BL.Controller;
 namespace UnitTestProject
 {
     [TestClass]
-    public class UnitTest
+    public class UserControllerUnitTest
     {
         [TestMethod]
         public void SetNewUserDataTest()
