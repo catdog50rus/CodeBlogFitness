@@ -1,4 +1,5 @@
 ﻿using CodeBlogFitness.BL.Controller;
+using CodeBlogFitness.BL.Model;
 using System;
 
 namespace CodeBlogFitness.CMD
@@ -13,7 +14,9 @@ namespace CodeBlogFitness.CMD
             var name = Console.ReadLine();
 
             var userController = new UserController(name);
-            if(userController.ISNewUser)
+            var eatingController = new EatingController(userController.CurrentUser);
+
+            if (userController.ISNewUser)
             {
                 Console.WriteLine("Введите пол");
                 var gender = Console.ReadLine();
@@ -25,6 +28,45 @@ namespace CodeBlogFitness.CMD
             }
 
             Console.WriteLine(userController.CurrentUser);
+
+            Console.WriteLine("Что вы хотите сделать?");
+            Console.WriteLine("Е - ввести прием пищи");
+            Console.WriteLine("P - Вывести съеденное");
+            Console.WriteLine();
+            var key = Console.ReadKey();
+            if(key.Key == ConsoleKey.E)
+            {
+                var foods = EnterEating();
+                eatingController.Add(foods.Food, foods.Weight);
+
+                foreach (var item in eatingController.Eating.Foods)
+                {
+                    Console.WriteLine($"\t{item.Key} : {item.Value}грамм");
+                }
+            }
+            if (key.Key == ConsoleKey.P)
+            {
+                foreach (var item in eatingController.Eating.Foods)
+                {
+                    Console.WriteLine($"\t{item.Key} : {item.Value}грамм");
+                }
+            }
+
+        }
+
+        private static (Food Food, double Weight) EnterEating()
+        {
+            Console.Write("Введите название продукта: ");
+            var food = Console.ReadLine();
+
+            var calories = ParseDouble("калорийность");
+            var prots = ParseDouble("белки");
+            var fats = ParseDouble("жиры");
+            var carbs = ParseDouble("Углеводы");
+            var weight = ParseDouble("вес порции");
+            var product = new Food(food, prots, fats, carbs, calories);
+
+            return (Food: product, Weight: weight);
         }
 
         private static DateTime ParseDateTime()
@@ -48,7 +90,7 @@ namespace CodeBlogFitness.CMD
         {
             while (true)
             {
-                Console.WriteLine($"Введите {name}:");
+                Console.Write($"Введите {name}: ");
                 if(double.TryParse(Console.ReadLine(), out double value))
                 {
                     return value;

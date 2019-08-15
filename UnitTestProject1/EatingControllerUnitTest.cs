@@ -18,16 +18,14 @@ namespace UnitTestProject1
             var foodName = Guid.NewGuid().ToString();
             var rnd = new Random();
             var userController = new UserController(userName);
-            var eatingController = new EatingController(userController.CurrentUser);
+            var eatingConroller = new EatingController(userController.CurrentUser);
             var food = new Food(foodName, rnd.Next(50, 500), rnd.Next(50, 500), rnd.Next(50, 500), rnd.Next(50, 500));
 
-            //Act
-            eatingController.Add(food, 100);
+            // Act
+            eatingConroller.Add(food, 100.0);
 
-
-
-            //Assert
-            Assert.AreEqual(food.Name, eatingController.Eating.Foods.First().Key.Name);
+            // Assert
+            Assert.AreEqual(userName, eatingConroller.Eating.User.Name);
         }
     }
 }
