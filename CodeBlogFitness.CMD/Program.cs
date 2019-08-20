@@ -14,9 +14,9 @@ namespace CodeBlogFitness.CMD
             var culture = CultureInfo.CreateSpecificCulture("ru-ru");
             var resourceManager = new ResourceManager("CodeBlogFitness.CMD.Languages.Messages", typeof(Program).Assembly);
             
-            Console.WriteLine(resourceManager.GetString("Hello"));
+            Console.WriteLine(resourceManager.GetString("Hello", culture));
 
-            Console.WriteLine(resourceManager.GetString("EnterName"));
+            Console.WriteLine(resourceManager.GetString("EnterName", culture));
             var name = Console.ReadLine();
 
             var userController = new UserController(name);
@@ -24,7 +24,7 @@ namespace CodeBlogFitness.CMD
 
             if (userController.ISNewUser)
             {
-                Console.WriteLine(resourceManager.GetString("EnterGender"));
+                Console.WriteLine(resourceManager.GetString("EnterGender", culture));
                 var gender = Console.ReadLine();
                 var birthDate = ParseDateTime();
                 var weight = ParseDouble("вес");
