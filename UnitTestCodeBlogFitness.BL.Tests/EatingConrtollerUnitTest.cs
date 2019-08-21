@@ -5,13 +5,13 @@ using CodeBlogFitness.BL.Controller;
 using CodeBlogFitness.BL.Model;
 using System.Linq;
 
-namespace UnitTestProject1
+namespace UnitTestUserController
 {
     [TestClass]
     public class EatingControllerUnitTest
     {
         [TestMethod]
-        public void AddTest()
+        public void AddEatingTest()
         {
             //Arrange
             var userName = Guid.NewGuid().ToString();
@@ -25,7 +25,7 @@ namespace UnitTestProject1
             eatingConroller.Add(food, 100.0);
 
             // Assert
-            Assert.AreEqual(userName, eatingConroller.Eating.User.Name);
+            Assert.AreEqual(food.Name, eatingConroller.Eating.Foods.First().Key.Name);
         }
     }
 }

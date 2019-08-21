@@ -17,4 +17,16 @@
     <ProjectReference Include="..\CodeBlogFitness.BL\CodeBlogFitness.BL.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Compile Update="ExerciseConrtollerUnitTest.cs">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Compile>
+    <Compile Update="EatingConrtollerUnitTest.cs">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Compile>
+    <Compile Update="UserConrtollerUnitTest.cs">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Compile>
+  </ItemGroup>
+
 </Project>

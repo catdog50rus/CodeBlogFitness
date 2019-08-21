@@ -38,6 +38,7 @@ namespace CodeBlogFitness.CMD
             Console.WriteLine("Что вы хотите сделать?");
             Console.WriteLine("Е - ввести прием пищи");
             Console.WriteLine("P - Вывести съеденное");
+            Console.WriteLine("A - Ввести упражнение");
             var key = Console.ReadKey();
             Console.WriteLine();
             if(key.Key == ConsoleKey.E)

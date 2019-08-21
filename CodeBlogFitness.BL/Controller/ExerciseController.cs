@@ -1,6 +1,7 @@
 ﻿using CodeBlogFitness.BL.Model;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 
 namespace CodeBlogFitness.BL.Controller
@@ -20,9 +21,22 @@ namespace CodeBlogFitness.BL.Controller
             Activities = GetAllActivites();
         }
 
-        public void Add(string activityName, DateTime begin, DateTime finish)
+        public void Add(Activity activity, DateTime begin, DateTime end)
         {
+            var act = Activities.SingleOrDefault(a => a.Name == activity.Name);
+            if(act == null)
+            {
+                Activities.Add(activity);
 
+                var exercise = new Exercise(begin, end, activity, user);
+                Exercises.Add(exercise);
+            }
+            else
+            {
+                var exercise = new Exercise(begin, end, act, user);
+                Exercises.Add(exercise);
+            }
+            Save();
         }
 
         private List<Exercise> GetAllExercises()
