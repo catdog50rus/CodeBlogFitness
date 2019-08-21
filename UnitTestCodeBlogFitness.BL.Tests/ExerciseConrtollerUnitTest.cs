@@ -8,7 +8,7 @@ using System.Linq;
 namespace UnitTestUserController
 {
     [TestClass]
-    public class UnitTestExerciseController
+    public class ExerciseControllerUnitTest
     {
         [TestMethod]
         public void AddExercisesTest()
@@ -26,7 +26,7 @@ namespace UnitTestUserController
                 exerciseConroller.Add(activity, DateTime.Now, DateTime.Now.AddHours(1));
 
                 // Assert
-                Assert.AreEqual(activityName, exerciseConroller.Activities.First().Name);
+                Assert.AreEqual(activityName, exerciseConroller.Activities.First(a => a.Name == activityName).Name);
             }
         }
     }

@@ -25,7 +25,7 @@ namespace UnitTestUserController
             eatingConroller.Add(food, 100.0);
 
             // Assert
-            Assert.AreEqual(food.Name, eatingConroller.Eating.Foods.First().Key.Name);
+            Assert.AreEqual(food.Name, eatingConroller.Eating.Foods.First(a => a.Key.Name == foodName).Key.Name);
         }
     }
 }

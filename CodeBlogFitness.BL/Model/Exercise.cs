@@ -7,6 +7,7 @@ namespace CodeBlogFitness.BL.Model
     [Serializable]
     public class Exercise
     {
+        public int Id { get; set; }
         public DateTime Start { get; set; }
         public DateTime Finish { get; set; }
         public Activity Activity { get; }

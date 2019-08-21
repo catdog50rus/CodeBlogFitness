@@ -10,6 +10,7 @@ namespace CodeBlogFitness.BL.Model
     /// </summary>
     public class Gender
     {
+        public int Id { get; set; }
         /// <summary>
         /// Название пола
         /// </summary>
