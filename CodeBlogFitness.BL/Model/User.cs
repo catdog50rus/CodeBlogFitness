@@ -11,7 +11,7 @@ namespace CodeBlogFitness.BL.Model
         /// <summary>
         /// Пользователь
         /// </summary>
-        public string Name { get; }
+        public string Name { get; set; }
 
         /// <summary>
         /// Пол.

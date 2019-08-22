@@ -12,11 +12,12 @@ namespace CodeBlogFitness.BL.Model
     {
 
         public int Id { get; set; }
-        public DateTime Moment { get; }
+        public DateTime Moment { get; set; }
 
-        public Dictionary<Food, double> Foods { get; }
+        public Dictionary<Food, double> Foods { get; set; }
 
-        public User User { get; }
+        public int UserID { get; set; }
+        public virtual User User { get; set; }
 
         public Eating(User user)
         {

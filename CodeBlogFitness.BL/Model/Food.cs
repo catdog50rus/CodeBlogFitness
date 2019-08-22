@@ -12,27 +12,26 @@ namespace CodeBlogFitness.BL.Model
         /// <summary>
         /// Название продукта
         /// </summary>
-        public string Name { get;  }
+        public string Name { get; set; }
        
         /// <summary>
         /// Белки
         /// </summary>
-        public double Proteins { get; }
+        public double Proteins { get; set; }
 
         /// <summary>
         /// Жиры
         /// </summary>
-        public double Fats { get; }
+        public double Fats { get; set; }
 
         /// <summary>
         /// Углеводы
         /// </summary>
-        public double Carbohydrates { get; }
-
+        public double Carbohydrates { get; set; }
         /// <summary>
         /// Калории на 100 грамм продукта
         /// </summary>
-        public double Calories { get; }
+        public double Calories { get;set;}
 
         /// <summary>
         /// Калории в одном грамме продукта
