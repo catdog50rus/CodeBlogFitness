@@ -8,7 +8,7 @@ namespace CodeBlogFitness.BL.Controller
 {
     class FitnessContext : DbContext
     {
-        public FitnessContext() : base("DBConnection") { }
+        
 
         public DbSet<Activity> Activities { get; set; }
         public DbSet<Eating> Eating { get; set; }
@@ -17,6 +17,14 @@ namespace CodeBlogFitness.BL.Controller
         public DbSet<Gender> Genders { get; set; }
         public DbSet<User> Users { get; set; }
 
+        public FitnessContext()
+        {
+            Database.EnsureCreated();
+        }
 
+        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+        {
+            optionsBuilder.UseSqlServer("Server=(localdb)\\mssqllocaldb;Database=CodeBlogFitness;Trusted_Connection=True;");
+        }
     }
 }

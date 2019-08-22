@@ -4,7 +4,7 @@ using System.Text;
 
 namespace CodeBlogFitness.BL.Controller
 {
-    public interface IDataSaver
+    public interface IDataSaver<T> where T : class
     {
         void Save(string fileName, object item);
 
