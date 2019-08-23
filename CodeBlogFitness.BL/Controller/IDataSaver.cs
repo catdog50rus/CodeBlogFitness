@@ -1,14 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using System.Collections.Generic;
 
 namespace CodeBlogFitness.BL.Controller
 {
-    public interface IDataSaver<T> where T : class
+    public interface IDataSaver
     {
-        void Save(string fileName, object item);
+        void Save<T>(List<T> item) where T : class;
 
-        T Load<T>(string fileName);
-        
+        List<T> Load<T>() where T : class;
     }
 }

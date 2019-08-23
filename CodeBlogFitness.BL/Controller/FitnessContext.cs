@@ -10,10 +10,10 @@ namespace CodeBlogFitness.BL.Controller
     {
         
 
-        public DbSet<Activity> Activities { get; set; }
-        public DbSet<Eating> Eating { get; set; }
-        public DbSet<Exercise> Exercises { get; set; }
-        public DbSet<Food> Food { get; set; }
+        //public DbSet<Activity> Activities { get; set; }
+        //public DbSet<Eating> Eating { get; set; }
+        //public DbSet<Exercise> Exercises { get; set; }
+        //public DbSet<Food> Food { get; set; }
         public DbSet<Gender> Genders { get; set; }
         public DbSet<User> Users { get; set; }
 

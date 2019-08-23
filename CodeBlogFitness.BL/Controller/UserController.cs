@@ -1,9 +1,7 @@
 ﻿using CodeBlogFitness.BL.Model;
 using System;
 using System.Collections.Generic;
-using System.IO;
 using System.Linq;
-using System.Runtime.Serialization.Formatters.Binary;
 
 namespace CodeBlogFitness.BL.Controller
 {
@@ -12,8 +10,6 @@ namespace CodeBlogFitness.BL.Controller
     /// </summary>
     public class UserController : BaseController
     {
-        private const string USERS_FILE_NAME = "users.dat";
-
         /// <summary>
         /// Пользователь приложения
         /// </summary>
@@ -33,10 +29,12 @@ namespace CodeBlogFitness.BL.Controller
             {
                 throw new ArgumentNullException("Имя пользователя не может быть пустым", nameof(userName));
             }
+
             Users = GetUsersData();
 
             CurrentUser = Users.SingleOrDefault(u => u.Name == userName);
-            if(CurrentUser == null)
+
+            if (CurrentUser == null)
             {
                 CurrentUser = new User(userName);
                 Users.Add(CurrentUser);
@@ -50,7 +48,7 @@ namespace CodeBlogFitness.BL.Controller
         /// <returns></returns>
         private List<User> GetUsersData()
         {
-            return Load<List<User>>(USERS_FILE_NAME) ?? new List<User>();
+            return Load<User>() ?? new List<User>();
             
         }
 
@@ -71,7 +69,7 @@ namespace CodeBlogFitness.BL.Controller
         /// <param name="user"></param>
         public void Save()
         {
-            Save(USERS_FILE_NAME, Users);   
+            Save(Users);   
         }
     }
 }

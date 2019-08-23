@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Text;
 
 namespace CodeBlogFitness.BL.Model
 {
@@ -9,16 +8,24 @@ namespace CodeBlogFitness.BL.Model
     {
         public int Id { get; set; }
         public string Name { get; set; }
+
+        public virtual ICollection<Exercise> Exercises { get; set; }
+
         public double CaloriesPerMinute { get; set; }
+
+        public Activity() { }
+
         public Activity(string name, double caloriesPerMinute)
         {
-            // TODO Проверка
+            // Проверка
+
             Name = name;
             CaloriesPerMinute = caloriesPerMinute;
         }
+
         public override string ToString()
         {
-            return $"{Name}";
+            return Name;
         }
     }
 }

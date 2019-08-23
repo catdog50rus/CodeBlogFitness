@@ -1,24 +1,20 @@
-﻿using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Runtime.Serialization.Formatters.Binary;
-using System.Text;
+﻿using System.Collections.Generic;
 
 namespace CodeBlogFitness.BL.Controller
 {
     public abstract class BaseController
     {
-        protected IDataSaver saver = new SerializeDataSaver();
+        private readonly IDataSaver manager = new SerializeDataSaver();
 
 
-        protected void Save(string fileName, object item)
+        protected void Save<T>(List<T> item) where T : class
         {
-            saver.Save(fileName, item);
+           manager.Save(item);
         }
 
-        protected T Load<T>(string fileName)
+        protected List<T> Load<T>() where T : class
         {
-            return saver.Load<T>(fileName);
+            return manager.Load<T>();
         }
     }
 }

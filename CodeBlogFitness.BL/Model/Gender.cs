@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Text;
 
 namespace CodeBlogFitness.BL.Model
 {
@@ -15,6 +14,10 @@ namespace CodeBlogFitness.BL.Model
         /// Название пола
         /// </summary>
         public string Name { get; set; }
+
+        public virtual ICollection<User> Users { get; set; }
+
+        public Gender() { }
 
         /// <summary>
         /// Создать новый пол.

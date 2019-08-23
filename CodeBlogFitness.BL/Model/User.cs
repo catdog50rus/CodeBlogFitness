@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace CodeBlogFitness.BL.Model
 {
@@ -16,7 +17,8 @@ namespace CodeBlogFitness.BL.Model
         /// <summary>
         /// Пол.
         /// </summary>
-        public Gender Gender { get; set; }
+        public int? GenderId { get; set; }
+        public virtual Gender Gender { get; set; }
 
         /// <summary>
         /// Дата рождения.
@@ -33,7 +35,9 @@ namespace CodeBlogFitness.BL.Model
         /// </summary>
         public double Height { get; set; }
 
-        
+        public virtual ICollection<Eating> Eatings { get; set; }
+        public virtual ICollection<Exercise> Exercises { get; set; }
+
         public int Age { get { return DateTime.Now.Year - BirthDate.Year; } }
 
         #endregion
@@ -81,6 +85,8 @@ namespace CodeBlogFitness.BL.Model
             Weight = weight;
             Height = height;
         }
+
+        public User() { }
 
         public User(string name)
         {
