@@ -1,7 +1,10 @@
 ﻿using CodeBlogFitness.BL.Controller;
 using CodeBlogFitness.BL.Model;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Configuration;
 using System;
 using System.Globalization;
+using System.IO;
 using System.Resources;
 
 
